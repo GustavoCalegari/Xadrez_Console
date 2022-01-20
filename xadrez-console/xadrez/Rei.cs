@@ -11,78 +11,78 @@ namespace xadrez
             return "R";
         }
 
-        private bool podeMover(Posicao pos)
+        private bool PodeMover(Posicao pos)
         {
-            Peca p = tab.peca(pos);
+            Peca p = tab.Peca(pos);
             return p == null || p.cor != cor;
         }
 
-        public override bool[,] movimentosPossiveis()
+        public override bool[,] MovimentosPossiveis()
         {
             bool[,] mat = new bool[tab.linhas, tab.colunas];
 
             Posicao pos = new Posicao(0, 0);
 
             // Acima
-            pos.definirValores(posicao.linha - 1, posicao.coluna);
+            pos.DefinirValores(posicao.linha - 1, posicao.coluna);
 
-            if (tab.isPosicaoValida(pos) && podeMover(pos))
+            if (tab.isPosicaoValida(pos) && PodeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
             }
 
             // Nordeste
-            pos.definirValores(posicao.linha - 1, posicao.coluna + 1);
+            pos.DefinirValores(posicao.linha - 1, posicao.coluna + 1);
 
-            if (tab.isPosicaoValida(pos) && podeMover(pos))
+            if (tab.isPosicaoValida(pos) && PodeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
             }
 
             // Direita
-            pos.definirValores(posicao.linha, posicao.coluna + 1);
+            pos.DefinirValores(posicao.linha, posicao.coluna + 1);
 
-            if (tab.isPosicaoValida(pos) && podeMover(pos))
+            if (tab.isPosicaoValida(pos) && PodeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
             }
 
             // Sudeste
-            pos.definirValores(posicao.linha + 1, posicao.coluna + 1);
+            pos.DefinirValores(posicao.linha + 1, posicao.coluna + 1);
 
-            if (tab.isPosicaoValida(pos) && podeMover(pos))
+            if (tab.isPosicaoValida(pos) && PodeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
             }
 
             // Abaixo
-            pos.definirValores(posicao.linha + 1, posicao.coluna);
+            pos.DefinirValores(posicao.linha + 1, posicao.coluna);
 
-            if (tab.isPosicaoValida(pos) && podeMover(pos))
+            if (tab.isPosicaoValida(pos) && PodeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
             }
 
             // Sudoeste
-            pos.definirValores(posicao.linha + 1, posicao.coluna - 1);
+            pos.DefinirValores(posicao.linha + 1, posicao.coluna - 1);
 
-            if (tab.isPosicaoValida(pos) && podeMover(pos))
+            if (tab.isPosicaoValida(pos) && PodeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
             }
 
             // Esquerda
-            pos.definirValores(posicao.linha, posicao.coluna - 1);
+            pos.DefinirValores(posicao.linha, posicao.coluna - 1);
 
-            if (tab.isPosicaoValida(pos) && podeMover(pos))
+            if (tab.isPosicaoValida(pos) && PodeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
             }
 
             // Noroeste
-            pos.definirValores(posicao.linha - 1, posicao.coluna - 1);
+            pos.DefinirValores(posicao.linha - 1, posicao.coluna - 1);
 
-            if (tab.isPosicaoValida(pos) && podeMover(pos))
+            if (tab.isPosicaoValida(pos) && PodeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
             }

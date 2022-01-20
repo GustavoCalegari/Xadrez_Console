@@ -13,23 +13,23 @@
             pecas = new Peca[linhas, colunas];
         }
 
-        public Peca peca(int linha, int coluna)
+        public Peca Peca(int linha, int coluna)
         {
             return pecas[linha, coluna];
         }
 
-        public Peca peca(Posicao pos)
+        public Peca Peca(Posicao pos)
         {
             return pecas[pos.linha, pos.coluna];
         }
 
         public bool isPecaExistente(Posicao pos)
         {
-            validarPosicao(pos);
-            return peca(pos) != null;
+            ValidarPosicao(pos);
+            return Peca(pos) != null;
         }
 
-        public void colocarPeca(Peca p, Posicao pos)
+        public void ColocarPeca(Peca p, Posicao pos)
         {
             if (isPecaExistente(pos))
             {
@@ -39,14 +39,14 @@
             p.posicao = pos;
         }
 
-        public Peca retirarPeca(Posicao pos)
+        public Peca RetirarPeca(Posicao pos)
         {
-            if (peca(pos) == null)
+            if (Peca(pos) == null)
             {
                 return null;
             }
 
-            Peca aux = peca(pos);
+            Peca aux = Peca(pos);
             aux.posicao = null;
             pecas[pos.linha, pos.coluna] = null;
             return aux;
@@ -61,7 +61,7 @@
             return true;
         }
 
-        public void validarPosicao(Posicao pos)
+        public void ValidarPosicao(Posicao pos)
         {
             if (!isPosicaoValida(pos))
             {

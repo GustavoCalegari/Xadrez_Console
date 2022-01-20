@@ -17,23 +17,23 @@ namespace xadrez_console
                     try
                     {
                         Console.Clear();
-                        Tela.imprimirPartida(partida);
+                        Tela.ImprimirPartida(partida);
 
                         Console.WriteLine();
                         Console.Write("Origem: ");
-                        Posicao origem = Tela.lerPosicaoXadrez().toProsicao();
-                        partida.validarPosicaoDeOrigem(origem);
+                        Posicao origem = Tela.LerPosicaoXadrez().toProsicao();
+                        partida.ValidarPosicaoDeOrigem(origem);
 
-                        bool[,] posicoesPossiveis = partida.tab.peca(origem).movimentosPossiveis();
+                        bool[,] posicoesPossiveis = partida.tab.Peca(origem).MovimentosPossiveis();
 
                         Console.Clear();
-                        Tela.imprimirTabuleiro(partida.tab, posicoesPossiveis);
+                        Tela.ImprimirTabuleiro(partida.tab, posicoesPossiveis);
 
                         Console.WriteLine();
                         Console.Write("Destino: ");
-                        Posicao destino = Tela.lerPosicaoXadrez().toProsicao();
+                        Posicao destino = Tela.LerPosicaoXadrez().toProsicao();
 
-                        partida.realizaJogada(origem, destino);
+                        partida.RealizaJogada(origem, destino);
                     }
                     catch (TabuleiroException e)
                     {
@@ -43,7 +43,7 @@ namespace xadrez_console
 
                 }
 
-                Tela.imprimirTabuleiro(partida.tab);
+                Tela.ImprimirTabuleiro(partida.tab);
 
                 Console.ReadLine();
             }
