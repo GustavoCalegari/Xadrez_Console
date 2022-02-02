@@ -21,7 +21,7 @@ namespace xadrez_console
 
                         Console.WriteLine();
                         Console.Write("Origem: ");
-                        Posicao origem = Tela.LerPosicaoXadrez().toProsicao();
+                        Posicao origem = Tela.LerPosicaoXadrez().ToProsicao();
                         partida.ValidarPosicaoDeOrigem(origem);
 
                         bool[,] posicoesPossiveis = partida.tab.Peca(origem).MovimentosPossiveis();
@@ -31,7 +31,9 @@ namespace xadrez_console
 
                         Console.WriteLine();
                         Console.Write("Destino: ");
-                        Posicao destino = Tela.LerPosicaoXadrez().toProsicao();
+                        Posicao destino = Tela.LerPosicaoXadrez().ToProsicao();
+                        partida.ValidarPosicaoDeDestino(origem, destino);
+
 
                         partida.RealizaJogada(origem, destino);
                     }
